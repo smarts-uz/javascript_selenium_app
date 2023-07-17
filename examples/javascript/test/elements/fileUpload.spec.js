@@ -1,5 +1,5 @@
 const { suite } = require('selenium-webdriver/testing');
-const {Browser, By} = require("selenium-webdriver");
+const {Browser, By, Builder} = require("selenium-webdriver");
 const path = require("path");
 
 suite(function(env) {
@@ -21,8 +21,21 @@ suite(function(env) {
       await driver.get('https://www.selenium.dev/selenium/web/upload.html');
       // Upload snapshot
       await driver.findElement(By.id("upload")).sendKeys(image);
+
       await driver.findElement(By.id("go")).submit();
+
+      driver.getPageSource().then(result => {
+        if (result.indexOf("File Uploaded!")) {
+          console.log("file upload success")
+        } else {
+          console.log("file upload not successful")
+        }
+      })
+
+
     });
+
+
 
   });
 }, { browsers: [Browser.CHROME, Browser.FIREFOX]});
