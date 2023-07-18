@@ -39,35 +39,9 @@ const {Browser, By, Builder, Key, until, wait} = require("selenium-webdriver");
         await searchInp.sendKeys('Hello world!')
         await xPath.submit()
 
+        await console.log('Success')
         await driver.wait(until.titleIs('Hello world - Поиск в Google'), 4000)
 
-        await console.log('Success')
-        // let list = await driver.findElement(By.xpath(`/html/body/div[2]/section/div/div[4]/h1`))
-        // if (uzb) {
-        //     console.log('Full success')
-        // } else {
-        //     console.log('error')
-        // }
-
-
-    // try {
-    //     await driver.get('https://www.google.com/')
-    //     let searchInp = await driver.findElement(By.xpath(`//*[@id="APjFqb"]`))
-    //     await searchInp.sendKeys('Laravel')
-    //     await searchInp.sendKeys(Key.ENTER)
-    //     await console.log('ENTER')
-    //     await driver.wait(until.titleIs('Laravel - Поиск в Google'))
-    //     await console.log('success - 1')
-    //     let link = await driver.findElement(By.xpath(`//*[@id="rso"]/div[1]/div/div/div/div/div/div/div/div[1]/a`))
-    //     link.click();
-    //     await console.log('click')
-    //     await driver.wait(until.titleIs('Laravel - The PHP Framework For Web Artisans'))
-    //     let list = await driver.findElement(By.xpath(`/html/body/div[2]/section/div/div[4]/h1`))
-    //     if (list) {
-    //         console.log('Full success')
-    //     } else {
-    //         console.log('error')
-    //     }
     } catch (e) {
         console.log('Error of catch')
         console.log(e)
