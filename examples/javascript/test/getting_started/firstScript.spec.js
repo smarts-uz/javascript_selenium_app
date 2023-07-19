@@ -2,7 +2,7 @@
 const {suite} = require('selenium-webdriver/testing');
 const assert = require("assert");
 
-
+//scripts
 suite(function (env) {
   describe('First script', function () {
     let driver;
