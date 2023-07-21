@@ -40,7 +40,7 @@ const {Browser, By, Builder, Key, until, wait} = require("selenium-webdriver");
         await xPath.submit()
 
         await console.log('Success')
-        await driver.wait(until.titleIs('Hello world - Поиск в Google'), 4000)
+        await driver.wait(until.titleIs('Hello world - Поиск в Google'), 3000)
 
     } catch (e) {
         console.log('Error of catch')
